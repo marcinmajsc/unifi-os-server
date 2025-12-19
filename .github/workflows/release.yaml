@@ -1,12 +1,7 @@
 name: Create and publish image on release
 
 on:
-  release:
-    types: [published]
-    paths-ignore:
-      - 'kubernetes/**'
-      - 'docker-compose.yaml'
-      - '**.md'
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
