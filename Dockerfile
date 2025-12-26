@@ -1,6 +1,6 @@
-FROM ghcr.io/lemker/uosserver:0.0.54-linux-amd64
+FROM ghcr.io/marcinmajsc/uosserver:0.0.54-linux-amd64
 
-LABEL org.opencontainers.image.source="https://github.com/lemker/unifi-os-server"
+LABEL org.opencontainers.image.source="https://github.com/marcinmajsc/unifi-os-server"
 
 ENV UOS_SERVER_VERSION="5.0.6"
 ENV FIRMWARE_PLATFORM="linux-x64"
