@@ -1,6 +1,6 @@
-FROM ghcr.io/lemker/uosserver:fd48e96764d3-multiarch
+FROM ghcr.io/marcinmajsc/uosserver:0.0.54-linux-amd64
 
-LABEL org.opencontainers.image.source="https://github.com/lemker/unifi-os-server"
+LABEL org.opencontainers.image.source="https://github.com/marcinmajsc/unifi-os-server"
 
 ENV container="docker"
 ENV APP_VERSION="6.0.21"
