@@ -1,9 +1,11 @@
-FROM ghcr.io/marcinmajsc/uosserver:0.0.54-linux-amd64
+FROM ghcr.io/marcinmajsc/uosserver:c9603dec9010-multiarch
 
 LABEL org.opencontainers.image.source="https://github.com/marcinmajsc/unifi-os-server"
 
-ENV UOS_SERVER_VERSION="5.0.6"
-ENV FIRMWARE_PLATFORM="linux-x64"
+ENV container="docker"
+ENV APP_VERSION="5.1.42"
+ENV APP_MODEL="UOSSERVER"
+ENV PRODUCT_NAME="UniFi OS Server"
 
 STOPSIGNAL SIGRTMIN+3
 
