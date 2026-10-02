@@ -65,3 +65,26 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
           provenance: false
+
+      - name: Tag platform manifests
+        shell: bash
+        env:
+          IMAGE: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          INDEX_DIGEST: ${{ steps.push.outputs.digest }}
+          VERSION: ${{ steps.meta.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          index=$(docker buildx imagetools inspect --raw "${IMAGE}@${INDEX_DIGEST}")
+
+          for architecture in amd64 arm64; do
+            digest=$(jq -er \
+              --arg architecture "$architecture" \
+              '.manifests[] | select(.platform.os == "linux" and .platform.architecture == $architecture) | .digest' \
+              <<< "$index")
+
+            docker buildx imagetools create \
+              --prefer-index=false \
+              --tag "${IMAGE}:${VERSION}-linux-${architecture}" \
+              "${IMAGE}@${digest}"
+          done
