@@ -63,7 +63,10 @@ jobs:
           file: ./Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          annotations: ${{ steps.meta.outputs.annotations }}
+          annotations: |
+            ${{ steps.meta.outputs.annotations }}
+            manifest-descriptor[linux/amd64]:org.opencontainers.image.ref.name=${{ steps.meta.outputs.version }}-linux-amd64
+            manifest-descriptor[linux/arm64]:org.opencontainers.image.ref.name=${{ steps.meta.outputs.version }}-linux-arm64
           provenance: false
 
       - name: Tag platform manifests
