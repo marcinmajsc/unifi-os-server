@@ -1,7 +1,7 @@
 # UniFi OS Server
 
-<a href="https://github.com/lemker/unifi-os-server/pkgs/container/unifi-os-server"><img src="https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fgithub.com%2Flemker%2Funifi-os-server%2Fpkgs%2Fcontainer%2Funifi-os-server&search=(%3Fs)%3Cspan%5B%5E%3E%5D*%3E%5Cs*Total%5Cs%2Bdownloads%5Cs*%3C%2Fspan%3E.*%3F%3Ch3%5B%5E%3E%5D*%3E%5Cs*(%5B0-9%5D%5B0-9.%2C%5D*%5Cs*%5BKM%5D%3F)%5Cs*%3C%2Fh3%3E&replace=%241&logo=github&label=Downloads&cacheSeconds=3600"></a>
-<a href="https://github.com/lemker/unifi-os-server/actions/workflows/build-image.yaml"><img src="https://img.shields.io/github/actions/workflow/status/lemker/unifi-os-server/build-image.yaml?logo=githubactions&logoColor=white&label=Actions"></a>
+<a href="https://github.com/marcinmajsc/unifi-os-server/pkgs/container/unifi-os-server"><img src="https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fgithub.com%2Fmarcinmajsc%2Funifi-os-server%2Fpkgs%2Fcontainer%2Funifi-os-server&search=(%3Fs)%3Cspan%5B%5E%3E%5D*%3E%5Cs*Total%5Cs%2Bdownloads%5Cs*%3C%2Fspan%3E.*%3F%3Ch3%5B%5E%3E%5D*%3E%5Cs*(%5B0-9%5D%5B0-9.%2C%5D*%5Cs*%5BKM%5D%3F)%5Cs*%3C%2Fh3%3E&replace=%241&logo=github&label=Downloads&cacheSeconds=3600"></a>
+<a href="https://github.com/marcinmajsc/unifi-os-server/actions/workflows/build-image.yaml"><img src="https://img.shields.io/github/actions/workflow/status/marcinmajsc/unifi-os-server/build-image.yaml?logo=githubactions&logoColor=white&label=Actions"></a>
 
 Run [UniFi OS Server](https://blog.ui.com/article/introducing-unifi-os-server) directly in Docker or Kubernetes.
 
@@ -13,13 +13,13 @@ Run [UniFi OS Server](https://blog.ui.com/article/introducing-unifi-os-server) d
 
 ## Docker Compose
 
-See [docker-compose.yaml](https://github.com/lemker/unifi-os-server/blob/main/docker-compose.yaml)
+See [docker-compose.yaml](https://github.com/marcinmajsc/unifi-os-server/blob/mod/docker-compose.yaml)
 
 ## Home Assistant
 
-1. In Home Assistant, go to **[Settings → Apps → App store](https://my.home-assistant.io/redirect/supervisor_store/)**, click **⋮ → Repositories**, fill in `https://github.com/lemker/unifi-os-server`, and click **Add → Close**. Or click the **Add repository** button below, then click **Add → Close**.
+1. In Home Assistant, go to **[Settings → Apps → App store](https://my.home-assistant.io/redirect/supervisor_store/)**, click **⋮ → Repositories**, fill in `https://github.com/marcinmajsc/unifi-os-server`, and click **Add → Close**. Or click the **Add repository** button below, then click **Add → Close**.
 
-   [![Open your Home Assistant instance and show the add app repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Flemker%2Funifi-os-server)
+   [![Open your Home Assistant instance and show the add app repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmarcinmajsc%2Funifi-os-server)
 
 1. Click the **UniFi OS Server** app, click **Install**, and wait until it's installed.
 1. Optionally, set **UOS_SYSTEM_IP** on the **Configuration** tab. If left empty, the app uses Home Assistant's IP address.
@@ -29,7 +29,7 @@ For storage, ports, and security notes, see [ha-app/DOCS.md](ha-app/DOCS.md).
 
 ## Kubernetes
 
-See [kubernetes](https://github.com/lemker/unifi-os-server/tree/main/kubernetes)
+See [kubernetes](https://github.com/marcinmajsc/unifi-os-server/tree/mod/kubernetes)
 
 Deployment example uses [ingress-nginx](https://github.com/kubernetes/ingress-nginx) for the ingress and [longhorn](https://github.com/longhorn/longhorn) for storage.
 
