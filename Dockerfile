@@ -1,4 +1,4 @@
-FROM ghcr.io/marcinmajsc/uosserver:0.0.54-linux-amd64
+FROM ghcr.io/marcinmajsc/uosserver:fd48e96764d3-multiarch
 
 LABEL org.opencontainers.image.source="https://github.com/marcinmajsc/unifi-os-server"
 
