@@ -98,6 +98,14 @@ if [ ! -d "$MONGODB_LOG_DIR" ]; then
     chmod 755 "$MONGODB_LOG_DIR"
 fi
 
+# Initialize postgresql log dirs
+POSTGRESQL_LOG_DIR="/var/log/postgresql"
+if [ ! -d "POSTGRESQL_LOG_DIR" ]; then
+    mkdir -p "POSTGRESQL_LOG_DIR"
+    chown postgres:postgres "POSTGRESQL_LOG_DIR"
+    chmod 755 "POSTGRESQL_LOG_DIR"
+fi
+
 # Initialize mongodb lib dirs
 MONGODB_LIB_DIR="/var/lib/mongodb"
 chown -R mongodb:mongodb "$MONGODB_LIB_DIR"
