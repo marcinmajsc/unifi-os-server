@@ -118,11 +118,6 @@ if [[ "$APP_MODEL" == "UOSSERVER" && ! -d "$RABBITMQ_LOG_DIR" ]]; then
     chmod 755 "$RABBITMQ_LOG_DIR"
 fi
 
-# Creating alias for mongodb service so that Network 10.6.77 and up doesn't fail
-if [[ "$APP_MODEL" == "UOSSERVER" && ! -e /etc/systemd/system/unifi-mongodb.service && ! -L /etc/systemd/system/unifi-mongodb.service ]]; then
-    ln -s /lib/systemd/system/mongodb.service /etc/systemd/system/unifi-mongodb.service
-fi
-
 # Apply Synology patches
 SYS_VENDOR="/sys/class/dmi/id/sys_vendor"
 if { [ -f "$SYS_VENDOR" ] && grep -q "Synology" "$SYS_VENDOR"; } \
