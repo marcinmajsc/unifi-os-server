@@ -154,7 +154,7 @@ if { [ -f "$SYS_VENDOR" ] && grep -q "Synology" "$SYS_VENDOR"; } \
 fi
 
 # Set UOS_SYSTEM_IP
-UNIFI_SYSTEM_PROPERTIES="/var/lib/unifi/system.properties"
+UNIFI_SYSTEM_PROPERTIES="/data/unifi/data/system.properties"
 if [ -n "${UOS_SYSTEM_IP+1}" ]; then
     echo "Setting UOS_SYSTEM_IP to $UOS_SYSTEM_IP"
     if [ ! -f "$UNIFI_SYSTEM_PROPERTIES" ]; then
