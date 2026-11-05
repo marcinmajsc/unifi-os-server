@@ -3,14 +3,14 @@ services:
   unifi-os-server:
     image: ghcr.io/marcinmajsc/unifi-os-server:latest
     container_name: unifi-os-server
-    cgroup: host
+    cgroup: private
+    privileged: true
     pids_limit: 65536
     cap_add:
       - NET_RAW
       - NET_ADMIN
     extra_hosts:
       host.docker.internal: host-gateway
-      host.containers.internal: host-gateway
     tmpfs:
       - /run:exec
       - /run/lock
@@ -18,9 +18,8 @@ services:
       - /var/lib/journal
       - /var/opt/unifi/tmp:size=64m
     environment:
-      - UOS_SYSTEM_IP=unifi.example.com
+      - UOS_SYSTEM_IP=192.168.1.254 # REPLACE WITH YOUR IP ADDRESS
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
       - ./persistent:/persistent
       - ./var-log:/var/log
       - ./data:/data
@@ -43,9 +42,9 @@ services:
       - 8881:8881 # Optional
       - 8882:8882 # Optional
       - 28082:28082 # Optional
+      - 20201-20202:20201-20202 # Optional
     healthcheck:
       test: curl --fail http://127.0.0.1/api/ping || exit 1
       interval: 60s
-      timeout: 5s
-      retries: 3
+      timeout: 5s retries: 3
     restart: unless-stopped
