@@ -1,9 +1,9 @@
-FROM ghcr.io/marcinmajsc/uosserver:e09ce4c9de07-multiarch
+FROM ghcr.io/marcinmajsc/uosserver:fd48e96764d3-multiarch
 
 LABEL org.opencontainers.image.source="https://github.com/marcinmajsc/unifi-os-server"
 
 ENV container="docker"
-ENV APP_VERSION="6.0.19"
+ENV APP_VERSION="6.0.21"
 ENV APP_MODEL="UOSSERVER"
 ENV PRODUCT_NAME="UniFi OS Server"
 
